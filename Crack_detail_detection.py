@@ -20,8 +20,8 @@ cv2.imshow('Image After morphing',opening)
 
 contours,h=cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 img=image1.copy()
-
-cv2.imshow('Image After drawing contours',img)
+cv2.drawContours(img,contours,-1,(255,0,0),-1)
+cv2.imshow('Crack',img)
 tot_area=0
 for c in contours:
     if(cv2.contourArea(c)<50):
